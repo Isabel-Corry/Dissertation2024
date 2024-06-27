@@ -193,3 +193,300 @@ https://cran.r-project.org/doc/manuals/r-patched/R-admin.html#Installing-package
       +     } 
     
     > main() 
+    > install.packages("sf") 
+    
+    Installing package into ‘M:/R/Win-Library/4.2’ 
+    
+    (as ‘lib’ is unspecified) 
+    
+    trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.2/sf_1.0-16.zip' 
+    
+    Content type 'application/zip' length 28034555 bytes (26.7 MB) 
+    
+    downloaded 26.7 MB 
+    
+    
+    
+    package ‘sf’ successfully unpacked and MD5 sums checked 
+    
+    
+    
+    The downloaded binary packages are in 
+    
+    C:\Users\s2587604\AppData\Local\Temp\Rtmp8007Io\downloaded_packages 
+    
+    > library(sf) 
+    
+    Linking to GEOS 3.9.3, GDAL 3.5.2, PROJ 8.2.1; sf_use_s2() is TRUE 
+    
+    Warning message: 
+      
+      package ‘sf’ was built under R version 4.2.3  
+    
+    > GEDI_Geotiff <- raster("GEDI_Cornwall_Mask.tif") 
+    
+    > ESA_Geotiff <- raster("ESA_Resample_Mean.tif") 
+    
+    > ICESat2_Geotiff <- raster("ICESat2_Resample_Mean.tif") 
+    
+    > crs(GEDI_Geotiff) 
+    
+    Coordinate Reference System: 
+      
+      Deprecated Proj.4 representation: 
+      
+      +proj=tmerc +lat_0=49 +lon_0=-2 +k=0.9996012717 +x_0=400000 +y_0=-100000 +ellps=airy +units=m +no_defs  
+    
+    WKT2 2019 representation: 
+      
+      PROJCRS["unknown", 
+              
+              BASEGEOGCRS["unknown", 
+                          
+                          DATUM["Unknown based on Airy 1830 ellipsoid", 
+                                
+                                ELLIPSOID["Airy 1830",6377563.396,299.3249646, 
+                                          
+                                          LENGTHUNIT["metre",1, 
+                                                     
+                                                     ID["EPSG",9001]]]], 
+                          
+                          PRIMEM["Greenwich",0, 
+                                 
+                                 ANGLEUNIT["degree",0.0174532925199433], 
+                                 
+                                 ID["EPSG",8901]]], 
+              
+              CONVERSION["unknown", 
+                         
+                         METHOD["Transverse Mercator", 
+                                
+                                ID["EPSG",9807]], 
+                         
+                         PARAMETER["Latitude of natural origin",49, 
+                                   
+                                   ANGLEUNIT["degree",0.0174532925199433], 
+                                   
+                                   ID["EPSG",8801]], 
+                         
+                         PARAMETER["Longitude of natural origin",-2, 
+                                   
+                                   ANGLEUNIT["degree",0.0174532925199433], 
+                                   
+                                   ID["EPSG",8802]], 
+                         
+                         PARAMETER["Scale factor at natural origin",0.9996012717, 
+                                   
+                                   SCALEUNIT["unity",1], 
+                                   
+                                   ID["EPSG",8805]], 
+                         
+                         PARAMETER["False easting",400000, 
+                                   
+                                   LENGTHUNIT["metre",1], 
+                                   
+                                   ID["EPSG",8806]], 
+                         
+                         PARAMETER["False northing",-100000, 
+                                   
+                                   LENGTHUNIT["metre",1], 
+                                   
+                                   ID["EPSG",8807]]], 
+              
+              CS[Cartesian,2], 
+              
+              AXIS["(E)",east, 
+                   
+                   ORDER[1], 
+                   
+                   LENGTHUNIT["metre",1, 
+                              
+                              ID["EPSG",9001]]], 
+              
+              AXIS["(N)",north, 
+                   
+                   ORDER[2], 
+                   
+                   LENGTHUNIT["metre",1, 
+                              
+                              ID["EPSG",9001]]]]  
+    
+    > crs(ESA_Geotiff) 
+    
+    Coordinate Reference System: 
+      
+      Deprecated Proj.4 representation: 
+      
+      +proj=tmerc +lat_0=49 +lon_0=-2 +k=0.9996012717 +x_0=400000 +y_0=-100000 +ellps=airy +units=m +no_defs  
+    
+    WKT2 2019 representation: 
+      
+      PROJCRS["unknown", 
+              
+              BASEGEOGCRS["unknown", 
+                          
+                          DATUM["Unknown based on Airy 1830 ellipsoid", 
+                                
+                                ELLIPSOID["Airy 1830",6377563.396,299.3249646, 
+                                          
+                                          LENGTHUNIT["metre",1, 
+                                                     
+                                                     ID["EPSG",9001]]]], 
+                          
+                          PRIMEM["Greenwich",0, 
+                                 
+                                 ANGLEUNIT["degree",0.0174532925199433], 
+                                 
+                                 ID["EPSG",8901]]], 
+              
+              CONVERSION["unknown", 
+                         
+                         METHOD["Transverse Mercator", 
+                                
+                                ID["EPSG",9807]], 
+                         
+                         PARAMETER["Latitude of natural origin",49, 
+                                   
+                                   ANGLEUNIT["degree",0.0174532925199433], 
+                                   
+                                   ID["EPSG",8801]], 
+                         
+                         PARAMETER["Longitude of natural origin",-2, 
+                                   
+                                   ANGLEUNIT["degree",0.0174532925199433], 
+                                   
+                                   ID["EPSG",8802]], 
+                         
+                         PARAMETER["Scale factor at natural origin",0.9996012717, 
+                                   
+                                   SCALEUNIT["unity",1], 
+                                   
+                                   ID["EPSG",8805]], 
+                         
+                         PARAMETER["False easting",400000, 
+                                   
+                                   LENGTHUNIT["metre",1], 
+                                   
+                                   ID["EPSG",8806]], 
+                         
+                         PARAMETER["False northing",-100000, 
+                                   
+                                   LENGTHUNIT["metre",1], 
+                                   
+                                   ID["EPSG",8807]]], 
+              
+              CS[Cartesian,2], 
+              
+              AXIS["(E)",east, 
+                   
+                   ORDER[1], 
+                   
+                   LENGTHUNIT["metre",1, 
+                              
+                              ID["EPSG",9001]]], 
+              
+              AXIS["(N)",north, 
+                   
+                   ORDER[2], 
+                   
+                   LENGTHUNIT["metre",1, 
+                              
+                              ID["EPSG",9001]]]]  
+    
+    > crs(ICESat2_Geotiff) 
+    
+    Coordinate Reference System: 
+      
+      Deprecated Proj.4 representation: 
+      
+      +proj=tmerc +lat_0=49 +lon_0=-2 +k=0.9996012717 +x_0=400000 +y_0=-100000 +ellps=airy +units=m +no_defs  
+    
+    WKT2 2019 representation: 
+      
+      PROJCRS["unknown", 
+              
+              BASEGEOGCRS["unknown", 
+                          
+                          DATUM["Unknown based on Airy 1830 ellipsoid", 
+                                
+                                ELLIPSOID["Airy 1830",6377563.396,299.3249646, 
+                                          
+                                          LENGTHUNIT["metre",1, 
+                                                     
+                                                     ID["EPSG",9001]]]], 
+                          
+                          PRIMEM["Greenwich",0, 
+                                 
+                                 ANGLEUNIT["degree",0.0174532925199433], 
+                                 
+                                 ID["EPSG",8901]]], 
+              
+              CONVERSION["unknown", 
+                         
+                         METHOD["Transverse Mercator", 
+                                
+                                ID["EPSG",9807]], 
+                         
+                         PARAMETER["Latitude of natural origin",49, 
+                                   
+                                   ANGLEUNIT["degree",0.0174532925199433], 
+                                   
+                                   ID["EPSG",8801]], 
+                         
+                         PARAMETER["Longitude of natural origin",-2, 
+                                   
+                                   ANGLEUNIT["degree",0.0174532925199433], 
+                                   
+                                   ID["EPSG",8802]], 
+                         
+                         PARAMETER["Scale factor at natural origin",0.9996012717, 
+                                   
+                                   SCALEUNIT["unity",1], 
+                                   
+                                   ID["EPSG",8805]], 
+                         
+                         PARAMETER["False easting",400000, 
+                                   
+                                   LENGTHUNIT["metre",1], 
+                                   
+                                   ID["EPSG",8806]], 
+                         
+                         PARAMETER["False northing",-100000, 
+                                   
+                                   LENGTHUNIT["metre",1], 
+                                   
+                                   ID["EPSG",8807]]], 
+              
+              CS[Cartesian,2], 
+              
+              AXIS["(E)",east, 
+                   
+                   ORDER[1], 
+                   
+                   LENGTHUNIT["metre",1, 
+                              
+                              ID["EPSG",9001]]], 
+              
+              AXIS["(N)",north, 
+                   
+                   ORDER[2], 
+                   
+                   LENGTHUNIT["metre",1, 
+                              
+                              ID["EPSG",9001]]]]  
+    
+    > Aligned_ESA_Raster <- resample(ESA_Geotiff, GEDI_Geotiff, method = "bilinear") 
+    
+    > Aligned_ICESat2_Raster <- resample(ICESat2_Geotiff, GEDI_Geotiff, methods = "bilinear") 
+    
+    > par(mfrow = c(1,3)) 
+    
+    > plot(GEDI_Geotiff, main="GEDI") 
+    
+    > plot(Aligned_ESA_Raster, main = "ESA") 
+    
+    > plot(Aligned_ICESat2_Raster, main = "ICESat2") 
+    
+    > writeRaster(Aligned_ESA_Raster, "ESA_Resampled_Mean_Aligned_Bi.tif", format = "GTiff") 
+    
+    > writeRaster(Aligned_ICESat2_Raster, "ICESat2_Resampled_Mean_Aligned_Bi.tif", format = "GTiff") 
