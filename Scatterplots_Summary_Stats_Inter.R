@@ -21,7 +21,7 @@ plot(GEDI_Vector, ICESat2_Vector, main = "GEDI vs ICESat2", xlab = "GEDI Biomass
 plot(ESA_Vector, ICESat2_Vector, main = "ESA vs ICESat2", xlab = "ESA Biomass", ylab = "ICESat2 Biomass", pch=19, col=rgb(0/255, 0/255, 139/255))
 add_summary_stats <- function(x, y, color, main_title, x_label, y_label) {
   +     model <- lm(y ~ x)
-  +     plot(x, y, pch = 19, col = color, main = main_title, xlab = x_label, xlim(0, 150), ylab = y_label, ylim = c(0, 150))
+  +     plot(x, y, pch = 19, col = color, main = main_title, xlab = x_label, xlim(0, 150), ylab = y_label, ylim = c(0, 400))
   +     abline(model, col = "red")
   +     mean_x <- mean(x)
   +     mean_y <- mean(y)

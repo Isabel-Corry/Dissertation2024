@@ -25,14 +25,14 @@ plot(ALS_Vector, ESA_Vector, main = "ALS vs ESA", xlab = "ALS Biomass", ylab = "
 plot(ALS_Vector, ICESat2_Vector, main = "ALS vs ESA", xlab = "ALS Biomass", ylab = "ICESat2 Biomass", pch=19, col=rgb(0/255, 0/255, 139/255))
 add_summary_stats <- function(x, y, color, main_title, x_label, y_label) {
   +     model <- lm(y ~ x)
-  +     plot(x, y, pch = 19, col = color, main = main_title, xlab = x_label, ylab = y_label, ylim = c(0, 400))
+  +     plot(x, y, pch = 19, col = color, main = main_title, xlab = x_label, ylab = y_label, ylim = c(0, 150))
   +     abline(model, col = "red")
   +     mean_x <- mean(x)
   +     mean_y <- mean(y)
-  +     abline(h = mean_y, col = "grey", lty = 2)
+  +     abline(h = mean_y, col = "yellow", lty = 2)
   +     abline(v = mean_x, col = "green", lty = 2)
-  +     text(mean_x, max(y), labels = paste("Slope:", round(coef(model)[2], 2)), pos = 4, col = "pink")
-  +     text(mean_x, max(y) * 0.95, labels = paste("Intercept:", round(coef(model)[1], 2)), pos = 4, col = "pink")
+  +     text(mean_x, 150, labels = paste("Slope:", round(coef(model)[2], 2)), pos = 4, col = "dark grey")
+  +     text(mean_x, 145, labels = paste("Intercept:", round(coef(model)[1], 2)), pos = 4, col = "dark grey")
   + }
 add_summary_stats(ALS_Vector, GEDI_Vector, rgb(173/255, 216/255, 230/255), "ALS vs GEDI", "ALS Biomass", "GEDI Biomass")
 add_summary_stats(ALS_Vector, ESA_Vector, rgb(255/255, 165/255, 0/255), "ALS vs ESA", "ALS Biomass", "ESA Biomass")
