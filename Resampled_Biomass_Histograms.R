@@ -30,4 +30,4 @@ ggplot(df, aes(x = value)) +
              +          x = "Pixel Values",
              +          y = "Frequency") + 
   +     xlim(0, 100) +
-        ylim(0, 2000)
+  ylim(0, 2000)
