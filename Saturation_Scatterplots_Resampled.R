@@ -19,7 +19,7 @@ data <- data.frame(GEDI = GEDI_Vector, ESA = ESA_Vector, ICESat2 = ICESat2_Vecto
 create_hex_plot <- function(x, y, xlab, ylab, title) {
   ggplot(data, aes(x = !!sym(x), y = !!sym(y))) + 
     geom_hex(bins = 20) + 
-    scale_fill_viridis_c() + 
+    scale_fill_viridis_c(limits = c(0, 10)) + 
     labs(title =  title, x = xlab, y = ylab) + 
     theme_minimal() + 
     coord_fixed() + 
@@ -27,6 +27,6 @@ create_hex_plot <- function(x, y, xlab, ylab, title) {
     ylim(0, 150)
 }
 hex_plot_p1 <- create_hex_plot("GEDI", "ESA", "GEDI Biomass", "ESA CCI Biomass", "GEDI vs ESA CCI")
-hex_plot_p2 <- create_hex_plot("GEDI", "ICESat2", "GDI Biomass", "ICESat2 Biomass", "GEDI vs ICESat2")
+hex_plot_p2 <- create_hex_plot("GEDI", "ICESat2", "GEDI Biomass", "ICESat2 Biomass", "GEDI vs ICESat2")
 hex_plot_p3 <- create_hex_plot("ESA", "ICESat2", "ESA CCI Biomass", "ICESat2 Biomass", "ESA CCI vs ICESat2")
 grid.arrange(hex_plot_p1, hex_plot_p2, hex_plot_p3, ncol = 3)
